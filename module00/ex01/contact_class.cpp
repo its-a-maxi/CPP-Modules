@@ -78,16 +78,16 @@ void        contact::ft_present_info(int i) const
 
 void        contact::ft_full_info(void) const
 {
-	std::cout << "First name: " << this->_first_name << std::endl;
-	std::cout << "Last name: " << this->_last_name << std::endl;
-	std::cout << "Nickname: " << this->_nickname << std::endl;
-	std::cout << "Login: " << this->_login << std::endl;
-	std::cout << "Postal address: " << this->_postal_address << std::endl;
-	std::cout << "e-mail address: " << this->_email_address << std::endl;
-	std::cout << "Phone number: " << this->_phone_number << std::endl;
-	std::cout << "Birthday date: " << this->_birthday_date << std::endl;
-	std::cout << "Favorite meal: " << this->_favorite_meal << std::endl;
+	std::cout << "First name:      " << this->_first_name << std::endl;
+	std::cout << "Last name:       " << this->_last_name << std::endl;
+	std::cout << "Nickname:        " << this->_nickname << std::endl;
+	std::cout << "Login:           " << this->_login << std::endl;
+	std::cout << "Postal address:  " << this->_postal_address << std::endl;
+	std::cout << "e-mail address:  " << this->_email_address << std::endl;
+	std::cout << "Phone number:    " << this->_phone_number << std::endl;
+	std::cout << "Birthday date:   " << this->_birthday_date << std::endl;
+	std::cout << "Favorite meal:   " << this->_favorite_meal << std::endl;
 	std::cout << "Underwear color: " << this->_underwear_color << std::endl;
-	std::cout << "Darkest secret: " << this->_darkest_secret << std::endl;
+	std::cout << "Darkest secret:  " << this->_darkest_secret << std::endl;
     return;
 }
