@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Human.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,28 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
-# include <iostream>
-# include <string>
-# include <random>
+# include "Brain.hpp"
 
-class   Zombie
+class   Human
 {
     public:
-        Zombie(void);
-        ~Zombie(void);
+        Human(void);
+        ~Human(void);
 
-        void            announce(void) const;
-        void            set_name(std::string name);
-        void            set_type(std::string type);
-        std::string     get_name(void) const;
-        std::string     get_type(void) const;
+        const Brain     &getBrain(void) const;
+	    unsigned long   *identify(void) const;
 
     private:
-        std::string     _name;
-        std::string     _type;
+        const Brain     _brain;
 };
 
 #endif

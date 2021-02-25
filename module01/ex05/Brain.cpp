@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Brain.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,39 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Brain.hpp"
 
-Zombie::Zombie(void)
+Brain::Brain(void)
 {
     return;
 }
 
-Zombie::~Zombie(void)
+Brain::~Brain(void)
 {
     return;
 }
 
-void    Zombie::announce(void) const
+unsigned long   *Brain::identify(void) const
 {
-    std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss..." << std::endl;
+    return ((unsigned long *)this);
 }
 
-void    Zombie::set_name(std::string name)
+std::string     Brain::get_thought(void) const
 {
-    this->_name = name;
+    return (this->_thought);
 }
 
-void    Zombie::set_type(std::string type)
+void            Brain::set_thought(std::string thought)
 {
-    this->_type = type;
-}
-
-std::string     Zombie::get_name(void) const
-{
-    return (this->_name);
-}
-
-std::string     Zombie::get_type(void) const
-{
-    return (this->_type);
+    this->_thought = thought;
+    return;
 }

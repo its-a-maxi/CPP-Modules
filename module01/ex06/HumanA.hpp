@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 12:49:15 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/02/24 15:05:17 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/02/25 11:37:32 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-# include <iostream>
-# include <string>
-# include <random>
+# include "Weapon.hpp"
 
-class   Zombie
+class   HumanA
 {
     public:
-        Zombie(void);
-        ~Zombie(void);
+        HumanA(std::string name, Weapon &weapon);
+        ~HumanA(void);
 
-        void            announce(void) const;
-        void            set_name(std::string name);
-        void            set_type(std::string type);
-        std::string     get_name(void) const;
-        std::string     get_type(void) const;
+        void        attack(void) const;
 
     private:
+        Weapon          &_weapon;
         std::string     _name;
-        std::string     _type;
+
 };
 
 #endif

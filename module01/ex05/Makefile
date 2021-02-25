@@ -6,15 +6,15 @@
 #    By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 11:43:49 by mmonroy-          #+#    #+#              #
-#    Updated: 2021/02/24 18:20:42 by mmonroy-         ###   ########.fr        #
+#    Updated: 2021/02/24 18:20:07 by mmonroy-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = Zombie.cpp ZombieHorde.cpp main.cpp
+SRCS = Brain.cpp Human.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = ex03
+NAME = ex05
 
 FLAGS = -Wall -Wextra -Werror
 CLANG = clang++ $(FLAGS)

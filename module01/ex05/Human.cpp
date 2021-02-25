@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombieevent.hpp                                    :+:      :+:    :+:   */
+/*   Human.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 12:49:15 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/02/24 14:03:48 by mmonroy-         ###   ########.fr       */
+/*   Created: 2021/02/24 12:52:35 by mmonroy-          #+#    #+#             */
+/*   Updated: 2021/02/24 15:05:09 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-# define ZOMBIEEVENT_HPP
+#include "Human.hpp"
 
-# include "Zombie.hpp"
-
-class   ZombieEvent
+Human::Human(void)
 {
-    public:
-        ZombieEvent(void);
-        ~ZombieEvent(void);
+    return;
+}
 
-        void        setZombieType(std::string type);
-        Zombie*     newZombie(std::string name);
-        Zombie*     randomChump(void);
-    private:
-        std::string     _type;
-        Zombie*         _zombie;
-};
+Human::~Human(void)
+{
+    return;
+}
 
-#endif
+unsigned long   *Human::identify(void) const
+{
+    return (this->_brain.identify());
+}
+
+const Brain     &Human::getBrain(void) const
+{
+    return (this->_brain);
+}

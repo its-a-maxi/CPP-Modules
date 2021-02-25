@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 12:52:35 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/02/24 14:20:03 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:46:39 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
-#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
-ZombieEvent::ZombieEvent(void)
+ZombieHorde::ZombieHorde(int N)
 {
-    this->_type = "unknown";
+    this->_number = N;
+    this->createHorde();
     return;
 }
 
-ZombieEvent::~ZombieEvent(void)
+ZombieHorde::~ZombieHorde(void)
 {
-    delete this->_zombie;
+    delete [] this->_zombieHorde;
+    std::cout << "A horde of " << this->_number << " zombies has been anhilated" << std::endl;
     return;
-}
-
-void                ZombieEvent::setZombieType(std::string type)
-{
-    this->_type = type;
-    return;
-}
-
-Zombie              *ZombieEvent::newZombie(std::string name)
-{
-    Zombie *newzombie = new Zombie(name, this->_type);
-    this->_zombie = newzombie;
-    return (newzombie);
 }
 
 static std::string  ft_random_name(std::string::size_type length)
@@ -52,7 +40,18 @@ static std::string  ft_random_name(std::string::size_type length)
     return (s);
 }
 
-Zombie              *ZombieEvent::randomChump(void)
+void                ZombieHorde::createHorde(void)
 {
-    return (this->newZombie(ft_random_name(10)));
+    int i = -1;
+
+    if (this->_number < 0)
+        return;
+    this->_zombieHorde = new Zombie[this->_number];
+    while(++i < this->_number)
+    {
+        (this->_zombieHorde)[i].set_name(ft_random_name(10));
+        (this->_zombieHorde)[i].set_type("unknown");
+        (this->_zombieHorde)[i].announce();
+    }
+    return;
 }

@@ -1,48 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 12:52:35 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/02/24 15:05:09 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/02/25 11:52:43 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-Zombie::Zombie(void)
+HumanB::HumanB(std::string name) : _name(name)
 {
     return;
 }
 
-Zombie::~Zombie(void)
+HumanB::~HumanB(void)
 {
     return;
 }
 
-void    Zombie::announce(void) const
+void        HumanB::attack(void) const
 {
-    std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss..." << std::endl;
+    std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
+    return;
 }
 
-void    Zombie::set_name(std::string name)
+void        HumanB::setWeapon(Weapon &weapon)
 {
-    this->_name = name;
-}
-
-void    Zombie::set_type(std::string type)
-{
-    this->_type = type;
-}
-
-std::string     Zombie::get_name(void) const
-{
-    return (this->_name);
-}
-
-std::string     Zombie::get_type(void) const
-{
-    return (this->_type);
+    this->_weapon = &weapon;
 }

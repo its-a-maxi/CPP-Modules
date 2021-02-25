@@ -6,7 +6,7 @@
 #    By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 11:43:49 by mmonroy-          #+#    #+#              #
-#    Updated: 2021/02/24 12:28:42 by mmonroy-         ###   ########.fr        #
+#    Updated: 2021/02/24 18:20:24 by mmonroy-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS = Pony.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = Pony
+NAME = ex00
 
 FLAGS = -Wall -Wextra -Werror
 CLANG = clang++ $(FLAGS)

@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 12:49:15 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/02/24 14:03:44 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:05:17 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@
 class   Zombie
 {
     public:
-        Zombie(std::string name, std::string type);
+        Zombie(void);
         ~Zombie(void);
 
-        void    announce(void) const;
+        void            announce(void) const;
+        void            set_name(std::string name);
+        void            set_type(std::string type);
+        std::string     get_name(void) const;
+        std::string     get_type(void) const;
 
     private:
         std::string     _name;

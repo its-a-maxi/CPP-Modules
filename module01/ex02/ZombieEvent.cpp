@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 12:52:35 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/02/24 14:20:03 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/02/24 15:07:25 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ ZombieEvent::ZombieEvent(void)
 
 ZombieEvent::~ZombieEvent(void)
 {
+    std::cout << "The <" << (this->_zombie)->get_name() << " (" << (this->_zombie)->get_type() << ")> zombie has leaved the Heap" << std::endl;
     delete this->_zombie;
     return;
 }
@@ -33,7 +34,9 @@ void                ZombieEvent::setZombieType(std::string type)
 
 Zombie              *ZombieEvent::newZombie(std::string name)
 {
-    Zombie *newzombie = new Zombie(name, this->_type);
+    Zombie *newzombie = new Zombie();
+    newzombie->set_name(name);
+    newzombie->set_type(this->_type);
     this->_zombie = newzombie;
     return (newzombie);
 }
@@ -52,7 +55,10 @@ static std::string  ft_random_name(std::string::size_type length)
     return (s);
 }
 
-Zombie              *ZombieEvent::randomChump(void)
+void                ZombieEvent::randomChump(void)
 {
-    return (this->newZombie(ft_random_name(10)));
+    Zombie *newzombie = this->newZombie(ft_random_name(10));
+    
+    newzombie->announce();
+    return;
 }
