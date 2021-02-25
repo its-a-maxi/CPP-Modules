@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 12:00:14 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/02/25 13:02:05 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/02/25 13:08:58 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int         main(int argc,char **argv)
     }
     while (std::getline(file, line))
     {
-        std::cout << line << std::endl;
         while (line.find(search) != std::string::npos)
             line.replace(line.find(search), search.size(), argv[3]);
         myfile << line << std::endl;
