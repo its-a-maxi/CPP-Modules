@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:05 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/01 16:59:31 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/01 16:59:44 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
 # include <string>
 # include <time.h>
 
-class FragTrap
+class ScavTrap
 {
 
 	public:
-		FragTrap();
-		FragTrap(std::string const name);
-		FragTrap(FragTrap const &src);
-		~FragTrap();
+		ScavTrap();
+		ScavTrap(std::string const name);
+		ScavTrap(ScavTrap const &src);
+		~ScavTrap();
 
-		FragTrap &		operator=( FragTrap const & rhs );
+		ScavTrap &		operator=( ScavTrap const & rhs );
 
 		void			rangedAttack(std::string const &target) const;
 		void			meleeAttack(std::string const &target) const;
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
-		void			vaulthunter_dot_exe(std::string const &target);
+		void			challengeNewcomer(void) const;
 
 		void			setHP(int points);
 		int				getHP(void) const;
@@ -51,12 +51,12 @@ class FragTrap
 		int					_HP;
 		static int const	_maxHP = 100;
 		int					_EP;
-		static int	const	_maxEP = 100;
+		static int	const	_maxEP = 50;
 		static int	const	_lvl = 1;
 		std::string			_name;
-		static int const	_meleeDMG = 30;
-		static int const	_rangedDMG = 20;
-		static int const	_armor = 5;
+		static int const	_meleeDMG = 20;
+		static int const	_rangedDMG = 15;
+		static int const	_armor = 3;
 };
 
-#endif /* ******************************************************** FRAGTRAP_H */
+#endif /* ******************************************************** ScavTrap_H */
