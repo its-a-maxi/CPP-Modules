@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 12:31:10 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 12:55:27 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ScavTrap::ScavTrap() : _name("Default name"), _HP(this->getMaxHP()),
 _EP(this->getMaxEP())
 {
-	srand(time(0));
+	this->initiliaceValues();
 	std::cout << "Starting bootup sequence for the evil janitor '" << this->getName()
 	<< "' SC4V-TP model" << std::endl;
 	return;
@@ -28,7 +28,7 @@ _EP(this->getMaxEP())
 ScavTrap::ScavTrap(std::string name) : _name(name), _HP(this->getMaxHP()),
 _EP(this->getMaxEP())
 {
-	srand(time(0));
+	this->initiliaceValues();
 	std::cout << "Starting bootup sequence for the evil janitor '" << this->getName()
 	<< "' SC4V-TP model" << std::endl;
 	return;
@@ -62,15 +62,35 @@ ScavTrap::~ScavTrap()
 
 ScavTrap &				ScavTrap::operator=(ScavTrap const &rhs)
 {
-	this->_name = rhs._name;
-	this->_EP = rhs._EP;
-	this->_HP = rhs._HP;
+	this->setHP(rhs.getHP());
+	this->setMaxHP(rhs.getMaxHP());
+	this->setEP(rhs.getEP());
+	this->setMaxEP(rhs.getMaxEP());
+	this->setLvl(rhs.getLvl());
+	this->setName(rhs.getName());
+	this->setMeleeDMG(rhs.getMeleeDMG());
+	this->setRangedDMG(rhs.getRangedDMG());
+	this->setArmor(rhs.getArmor());
 	return (*this);
 }
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+void			ScavTrap::initiliaceValues(void)
+{
+	srand(time(0));
+	this->setHP(100);
+	this->setMaxHP(100);
+	this->setEP(50);
+	this->setMaxEP(50);
+	this->setLvl(1);
+	this->setMeleeDMG(20);
+	this->setRangedDMG(15);
+	this->setArmor(3);
+	return;
+}
 
 void			ScavTrap::rangedAttack(std::string const &target) const
 {
@@ -142,6 +162,18 @@ int						ScavTrap::getHP(void) const
 {
 	return (this->_HP);
 }
+
+void					ScavTrap::setMaxHP(int points)
+{
+	this->_maxHP = points;
+	return;
+}
+
+int						ScavTrap::getMaxHP(void) const
+{
+	return (this->_maxHP);
+}
+
 void					ScavTrap::setEP(int points)
 {
 	this->_EP = points;
@@ -151,6 +183,28 @@ void					ScavTrap::setEP(int points)
 int						ScavTrap::getEP(void) const
 {
 	return (this->_EP);
+}
+
+void					ScavTrap::setMaxEP(int points)
+{
+	this->_maxEP = points;
+	return;
+}
+
+int						ScavTrap::getMaxEP(void) const
+{
+	return (this->_maxEP);
+}
+
+void					ScavTrap::setLvl(int points)
+{
+	this->_lvl = points;
+	return;
+}
+
+int						ScavTrap::getLvl(void) const
+{
+	return (this->_lvl);
 }
 
 void					ScavTrap::setName(std::string name)
@@ -164,14 +218,10 @@ std::string				ScavTrap::getName(void) const
 	return (this->_name);
 }
 
-int						ScavTrap::getMaxEP(void) const
+void					ScavTrap::setMeleeDMG(int points)
 {
-	return (this->_maxEP);
-}
-
-int						ScavTrap::getMaxHP(void) const
-{
-	return (this->_maxHP);
+	this->_meleeDMG = points;
+	return;
 }
 
 int						ScavTrap::getMeleeDMG(void) const
@@ -179,9 +229,21 @@ int						ScavTrap::getMeleeDMG(void) const
 	return(this->_meleeDMG);
 }
 
+void					ScavTrap::setRangedDMG(int points)
+{
+	this->_rangedDMG = points;
+	return;
+}
+
 int						ScavTrap::getRangedDMG(void) const
 {
 	return(this->_rangedDMG);
+}
+
+void					ScavTrap::setArmor(int points)
+{
+	this->_armor = points;
+	return;
 }
 
 int						ScavTrap::getArmor(void) const

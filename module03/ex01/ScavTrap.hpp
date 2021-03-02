@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:05 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/01 16:59:44 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 12:46:21 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,37 @@ class ScavTrap
 
 		void			setHP(int points);
 		int				getHP(void) const;
+		void			setMaxHP(int points);
+		int				getMaxHP(void) const;
 		void			setEP(int points);
 		int				getEP(void) const;
+		void			setMaxEP(int points);
+		int				getMaxEP(void) const;
+		void			setLvl(int points);
+		int				getLvl(void) const;
 		void			setName(std::string name);
 		std::string		getName(void) const;
-		int				getMaxHP(void) const;
-		int				getMaxEP(void) const;
+		void			setMeleeDMG(int points);
 		int				getMeleeDMG(void) const;
+		void			setRangedDMG(int points);
 		int				getRangedDMG(void) const;
+		void			setArmor(int points);
 		int				getArmor(void) const;
 
 
 	private:
 		int					_HP;
-		static int const	_maxHP = 100;
+		int					_maxHP;
 		int					_EP;
-		static int	const	_maxEP = 50;
-		static int	const	_lvl = 1;
+		int					_maxEP ;
+		int					_lvl;
 		std::string			_name;
-		static int const	_meleeDMG = 20;
-		static int const	_rangedDMG = 15;
-		static int const	_armor = 3;
+		int					_meleeDMG;
+		int					_rangedDMG;
+		int					_armor;
+
+		void			initiliaceValues(void);
+
 };
 
 #endif /* ******************************************************** ScavTrap_H */

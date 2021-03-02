@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 12:33:32 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 12:59:58 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,17 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-FragTrap::FragTrap() : _name("Default name"), _HP(this->getMaxHP()),
-_EP(this->getMaxEP())
+FragTrap::FragTrap() : _name("Default")
 {
-	srand(time(0));
+	this->initiliaceValues();
 	std::cout << "Starting bootup sequence for the '" << this->getName()
 	<< "' FR4G-TP model" << std::endl;
 	return;
 }
 
-FragTrap::FragTrap(std::string name) : _name(name), _HP(this->getMaxHP()),
-_EP(this->getMaxEP())
+FragTrap::FragTrap(std::string name) : _name(name)
 {
-	srand(time(0));
+	this->initiliaceValues();
 	std::cout << "Starting bootup sequence for the '" << this->getName()
 	<< "' FR4G-TP model" << std::endl;
 	return;
@@ -62,15 +60,35 @@ FragTrap::~FragTrap()
 
 FragTrap &				FragTrap::operator=(FragTrap const &rhs)
 {
-	this->_name = rhs._name;
-	this->_EP = rhs._EP;
-	this->_HP = rhs._HP;
+	this->setHP(rhs.getHP());
+	this->setMaxHP(rhs.getMaxHP());
+	this->setEP(rhs.getEP());
+	this->setMaxEP(rhs.getMaxEP());
+	this->setLvl(rhs.getLvl());
+	this->setName(rhs.getName());
+	this->setMeleeDMG(rhs.getMeleeDMG());
+	this->setRangedDMG(rhs.getRangedDMG());
+	this->setArmor(rhs.getArmor());
 	return (*this);
 }
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+void			FragTrap::initiliaceValues(void)
+{
+	srand(time(0));
+	this->setHP(100);
+	this->setMaxHP(100);
+	this->setEP(100);
+	this->setMaxEP(100);
+	this->setLvl(1);
+	this->setMeleeDMG(30);
+	this->setRangedDMG(20);
+	this->setArmor(5);
+	return;
+}
 
 void			FragTrap::rangedAttack(std::string const &target) const
 {
@@ -90,6 +108,7 @@ void			FragTrap::meleeAttack(std::string const &target) const
 
 void			FragTrap::takeDamage(unsigned int amount)
 {
+	
 	amount -= this->getArmor();
 	if (amount >= this->getHP())
 		this->setHP(0);
@@ -117,7 +136,7 @@ void			FragTrap::vaulthunter_dot_exe(std::string const &target)
 {
 	std::string		randomAttack[] = {
 	"kicks the enemy while he's down",
-	"Claptrapped the enemy",
+	"ClapTrapped the enemy",
 	"confuses the enemy with his stupidity",
 	"starts to cry",
 	"threatens the enemy with taking his own life"};
@@ -150,6 +169,18 @@ int						FragTrap::getHP(void) const
 {
 	return (this->_HP);
 }
+
+void					FragTrap::setMaxHP(int points)
+{
+	this->_maxHP = points;
+	return;
+}
+
+int						FragTrap::getMaxHP(void) const
+{
+	return (this->_maxHP);
+}
+
 void					FragTrap::setEP(int points)
 {
 	this->_EP = points;
@@ -159,6 +190,28 @@ void					FragTrap::setEP(int points)
 int						FragTrap::getEP(void) const
 {
 	return (this->_EP);
+}
+
+void					FragTrap::setMaxEP(int points)
+{
+	this->_maxEP = points;
+	return;
+}
+
+int						FragTrap::getMaxEP(void) const
+{
+	return (this->_maxEP);
+}
+
+void					FragTrap::setLvl(int points)
+{
+	this->_lvl = points;
+	return;
+}
+
+int						FragTrap::getLvl(void) const
+{
+	return (this->_lvl);
 }
 
 void					FragTrap::setName(std::string name)
@@ -172,14 +225,10 @@ std::string				FragTrap::getName(void) const
 	return (this->_name);
 }
 
-int						FragTrap::getMaxEP(void) const
+void					FragTrap::setMeleeDMG(int points)
 {
-	return (this->_maxEP);
-}
-
-int						FragTrap::getMaxHP(void) const
-{
-	return (this->_maxHP);
+	this->_meleeDMG = points;
+	return;
 }
 
 int						FragTrap::getMeleeDMG(void) const
@@ -187,9 +236,21 @@ int						FragTrap::getMeleeDMG(void) const
 	return(this->_meleeDMG);
 }
 
+void					FragTrap::setRangedDMG(int points)
+{
+	this->_rangedDMG = points;
+	return;
+}
+
 int						FragTrap::getRangedDMG(void) const
 {
 	return(this->_rangedDMG);
+}
+
+void					FragTrap::setArmor(int points)
+{
+	this->_armor = points;
+	return;
 }
 
 int						FragTrap::getArmor(void) const

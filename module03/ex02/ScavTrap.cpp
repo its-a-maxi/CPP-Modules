@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 12:23:32 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 12:58:33 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &src)
 {
+	srand(time(0));
 	*this = src;
 	std::cout << "Starting bootup sequence for the evil janitor '" << this->getName()
 	<< "' SC4V-TP model" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 12:24:52 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 12:58:22 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &src)
 {
+	srand(time(0));
 	*this = src;
 	std::cout << "Starting bootup sequence for the '" << this->getName()
 	<< "' FR4G-TP model" << std::endl;
