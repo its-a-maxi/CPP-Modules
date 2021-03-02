@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/01 17:16:31 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 12:33:32 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ FragTrap::FragTrap(const FragTrap &src)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "AHHHHHHHHHHH! Please. Don't kill me.		" << getName() << ". Today-Today" << std::endl;
+	std::cout << "AHHHHHHHHHHH! Please. Don't kill me.					"
+	<< this->getName() << ". Today-Today" << std::endl;
 	return; 
 }
 

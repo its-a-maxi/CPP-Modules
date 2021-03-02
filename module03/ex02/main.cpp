@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 13:00:53 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 12:34:21 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 12:30:25 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int         main(void)
     std::cout << std::endl << "\033[1;35m< TESTING FR4G-TP BOTS >\033[0m" << std::endl << std::endl;
 
     std::cout << "\033[1;32m- Starting FR4G-TP bots -\033[0m" << std::endl;
-    FragTrap claptrap1("ClapTrap");
-    FragTrap claptrap2("CL4P-TP");
+    FragTrap claptrap1("VR-0N1CA");
+    FragTrap claptrap2("Jackobs Cove");
 
     std::cout << std::endl << "\033[1;32m- Testing battle capabilities  of FR4G-TP bots -\033[0m" << std::endl;
     claptrap1.meleeAttack("skag");
@@ -75,6 +75,7 @@ int         main(void)
     scavtrap1.challengeNewcomer();
 
 
+    std::cout << std::endl << "\033[1;35m< DESTROYING BOTS >\033[0m" << std::endl;
 
     std::cout << std::endl << "\033[1;32m- Destroying FR4G-TP and SC4V-TP bots -\033[0m" << std::endl;
     return (1);

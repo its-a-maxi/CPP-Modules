@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/01 17:18:52 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 12:31:10 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ ScavTrap::ScavTrap(const ScavTrap &src)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "NO! Don't you know who I'm?! You'll pay for this!, AHHHHHH!		"
-	<< getName() << ". Today-Today" << std::endl;
+	<< this->getName() << ". Today-Today" << std::endl;
 	return; 
 }
 
