@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   SuperTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 14:56:56 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 13:18:59 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "SuperTrap.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-FragTrap::FragTrap() : ClapTrap()
+SuperTrap::SuperTrap() : ClapTrap()
 {
 	this->initiliaceValues();
-	std::cout << "Starting bootup sequence for the '" << this->getName()
-	<< "' FR4G-TP model" << std::endl;
+	std::cout << "Merging the two bots in one, the definitive robot has emerged - '"
+	<< this->getName() << "' 5UP3R-TP model" << std::endl;
 	return;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+SuperTrap::SuperTrap(std::string name) : ClapTrap(name)
 {
 	this->initiliaceValues();
-	std::cout << "Starting bootup sequence for the '" << this->getName()
-	<< "' FR4G-TP model" << std::endl;
+	std::cout << "Merging the two bots in one, the definitive robot has emerged - '"
+	<< this->getName() << "' 5UP3R-TP model" << std::endl;
 	return;
 }
 
-FragTrap::FragTrap(const FragTrap &src)
+SuperTrap::SuperTrap(const SuperTrap &src)
 {
 	srand(time(0));
-	*this = src;
-	std::cout << "Starting bootup sequence for the '" << this->getName()
-	<< "' FR4G-TP model" << std::endl;
+	*this = src;;
+	std::cout << "Copying bot '"
+	<< this->getName() << "' 5UP3R-TP model" << std::endl;
 	return;
 }
 
@@ -46,9 +46,9 @@ FragTrap::FragTrap(const FragTrap &src)
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-FragTrap::~FragTrap()
+SuperTrap::~SuperTrap()
 {
-	std::cout << "AHHHHHHHHHHH! Please. Don't kill me.					"
+	std::cout << "The definitive robot has been defeated.					"
 	<< this->getName() << ". Today-Today" << std::endl;
 	return; 
 }
@@ -64,41 +64,30 @@ FragTrap::~FragTrap()
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void			FragTrap::initiliaceValues(void)
+void			SuperTrap::initiliaceValues(void)
 {
 	srand(time(0));
 	this->setHP(100);
 	this->setMaxHP(100);
-	this->setEP(100);
-	this->setMaxEP(100);
+	this->setEP(120);
+	this->setMaxEP(120);
 	this->setLvl(1);
-	this->setMeleeDMG(30);
+	this->setMeleeDMG(60);
 	this->setRangedDMG(20);
 	this->setArmor(5);
-	this->setModel("FR4G-TP");
+	this->setModel("5UP3R-TP");
 	return;
 }
 
-void			FragTrap::vaulthunter_dot_exe(std::string const &target)
+void			SuperTrap::rangedAttack(std::string const &target) const
 {
-	std::string		randomAttack[] = {
-	"kicks the enemy while he's down",
-	"Claptrapped the enemy",
-	"confuses the enemy with his stupidity",
-	"starts to cry",
-	"threatens the enemy with taking his own life"};
+	FragTrap::rangedAttack(target);
+	return;
+}
 
-	if (this->getEP() < 25)
-	{
-		std::cout << "FR4G-TP " << this->getName()
-		<< " doesn't have enought Energy Points to activate 'VaultHunter.EXE'"
-		<< std::endl;
-		return;
-	}
-	this->setEP(this->getEP() - 25);
-	std::cout << "FR4G-TP " << this->getName() << " " << randomAttack[rand() % 5]
-	<< ", " << target << " receives emotional damage!"
-	<< std::endl;
+void			SuperTrap::meleeAttack(std::string const &target) const
+{
+	NinjaTrap::meleeAttack(target);
 	return;
 }
 

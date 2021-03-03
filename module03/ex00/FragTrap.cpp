@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 13:01:00 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:56:54 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void			FragTrap::initiliaceValues(void)
 
 void			FragTrap::rangedAttack(std::string const &target) const
 {
-	std::cout << "FR4G-TP " << this->getName() << " attacks a " << target
+	std::cout << "FR4G-TP " << this->getName() << " attacks " << target
 	<< " at range, causing " << this->getRangedDMG() << " points of damage!"
 	<< std::endl; 
 	return;
@@ -100,7 +100,7 @@ void			FragTrap::rangedAttack(std::string const &target) const
 
 void			FragTrap::meleeAttack(std::string const &target) const
 {
-	std::cout << "FR4G-TP " << this->getName() << " attacks a " << target
+	std::cout << "FR4G-TP " << this->getName() << " attacks " << target
 	<< " at melee, causing " << this->getMeleeDMG() << " points of damage!"
 	<< std::endl; 
 	return;
@@ -150,7 +150,7 @@ void			FragTrap::vaulthunter_dot_exe(std::string const &target)
 	}
 	this->setEP(this->getEP() - 25);
 	std::cout << "FR4G-TP " << this->getName() << " " << randomAttack[rand() % 5]
-	<< ". The " << target << " receives emotional damage!"
+	<< ". " << target << " receives emotional damage!"
 	<< std::endl;
 	return;
 }

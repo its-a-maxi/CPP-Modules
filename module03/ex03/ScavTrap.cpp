@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 14:56:56 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 13:19:08 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-FragTrap::FragTrap() : ClapTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	this->initiliaceValues();
-	std::cout << "Starting bootup sequence for the '" << this->getName()
-	<< "' FR4G-TP model" << std::endl;
+	std::cout << "Starting bootup sequence for the evil janitor '" << this->getName()
+	<< "' SC4V-TP model" << std::endl;
 	return;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->initiliaceValues();
-	std::cout << "Starting bootup sequence for the '" << this->getName()
-	<< "' FR4G-TP model" << std::endl;
+	std::cout << "Starting bootup sequence for the evil janitor '" << this->getName()
+	<< "' SC4V-TP model" << std::endl;
 	return;
 }
 
-FragTrap::FragTrap(const FragTrap &src)
+ScavTrap::ScavTrap(const ScavTrap &src)
 {
 	srand(time(0));
 	*this = src;
-	std::cout << "Starting bootup sequence for the '" << this->getName()
-	<< "' FR4G-TP model" << std::endl;
+	std::cout << "Starting bootup sequence for the evil janitor '" << this->getName()
+	<< "' SC4V-TP model" << std::endl;
 	return;
 }
 
@@ -46,9 +46,9 @@ FragTrap::FragTrap(const FragTrap &src)
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-FragTrap::~FragTrap()
+ScavTrap::~ScavTrap()
 {
-	std::cout << "AHHHHHHHHHHH! Please. Don't kill me.					"
+	std::cout << "NO! Don't you know who I'm?! You'll pay for this!, AHHHHHH!		"
 	<< this->getName() << ". Today-Today" << std::endl;
 	return; 
 }
@@ -64,41 +64,33 @@ FragTrap::~FragTrap()
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void			FragTrap::initiliaceValues(void)
+void			ScavTrap::initiliaceValues(void)
 {
 	srand(time(0));
 	this->setHP(100);
 	this->setMaxHP(100);
-	this->setEP(100);
-	this->setMaxEP(100);
+	this->setEP(50);
+	this->setMaxEP(50);
 	this->setLvl(1);
-	this->setMeleeDMG(30);
-	this->setRangedDMG(20);
-	this->setArmor(5);
-	this->setModel("FR4G-TP");
+	this->setMeleeDMG(20);
+	this->setRangedDMG(15);
+	this->setArmor(3);
+	this->setModel("SC4V-TP");
 	return;
 }
 
-void			FragTrap::vaulthunter_dot_exe(std::string const &target)
+void			ScavTrap::challengeNewcomer(void) const
 {
-	std::string		randomAttack[] = {
-	"kicks the enemy while he's down",
-	"Claptrapped the enemy",
-	"confuses the enemy with his stupidity",
-	"starts to cry",
-	"threatens the enemy with taking his own life"};
+	std::string		randomChallenge[] = {
+	"sacrifice 1000 souls for my Lord",
+	"give me all the loot you have collected in Pandora",
+	"hunt the ridiculously strong hyper super mega fire magic dragon",
+	"watch Titanic with me and dry my tears",
+	"play 'Dance Dance Revolution' with me"};
 
-	if (this->getEP() < 25)
-	{
-		std::cout << "FR4G-TP " << this->getName()
-		<< " doesn't have enought Energy Points to activate 'VaultHunter.EXE'"
-		<< std::endl;
-		return;
-	}
-	this->setEP(this->getEP() - 25);
-	std::cout << "FR4G-TP " << this->getName() << " " << randomAttack[rand() % 5]
-	<< ", " << target << " receives emotional damage!"
-	<< std::endl;
+	std::cout << "SC4V-TP " << this->getName()
+	<< " challenge you: If you want to enter this Evil Lair you need to "
+	<< randomChallenge[rand() % 5] << std::endl;
 	return;
 }
 

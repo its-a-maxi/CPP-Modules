@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 12:55:27 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:53:47 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void			ScavTrap::initiliaceValues(void)
 
 void			ScavTrap::rangedAttack(std::string const &target) const
 {
-	std::cout << "SC4V-TP " << this->getName() << " attacks a " << target
+	std::cout << "SC4V-TP " << this->getName() << " attacks " << target
 	<< " with his magic, causing " << this->getRangedDMG() << " points of damage!"
 	<< std::endl; 
 	return;
@@ -102,7 +102,7 @@ void			ScavTrap::rangedAttack(std::string const &target) const
 
 void			ScavTrap::meleeAttack(std::string const &target) const
 {
-	std::cout << "SC4V-TP " << this->getName() << " attacks a " << target
+	std::cout << "SC4V-TP " << this->getName() << " attacks " << target
 	<< " with his scythe, causing " << this->getMeleeDMG() << " points of damage!"
 	<< std::endl; 
 	return;

@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 14:56:56 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 13:18:59 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void			FragTrap::vaulthunter_dot_exe(std::string const &target)
 	}
 	this->setEP(this->getEP() - 25);
 	std::cout << "FR4G-TP " << this->getName() << " " << randomAttack[rand() % 5]
-	<< ", " << target << " receives emotional damage!"
+	<< ". The " << target << " receives emotional damage!"
 	<< std::endl;
 	return;
 }

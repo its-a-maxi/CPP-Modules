@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 13:00:53 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 12:47:14 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/02 14:57:33 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int         main(void)
     FragTrap claptrap2("Jackobs Cove");
 
     std::cout << std::endl << "\033[1;32m- Testing battle capabilities  of FR4G-TP bots -\033[0m" << std::endl;
-    claptrap1.meleeAttack("skag");
-    claptrap1.rangedAttack("bandit");
-    claptrap2.meleeAttack("psycho");
-    claptrap2.rangedAttack("rakk");
+    claptrap1.meleeAttack("Skag");
+    claptrap1.rangedAttack("Bandit");
+    claptrap2.meleeAttack("Psycho");
+    claptrap2.rangedAttack("Rakk");
 
     std::cout << std::endl << "\033[1;32m- Testing resistance of FR4G-TP bots -\033[0m" << std::endl;
     claptrap1.takeDamage(60);
@@ -37,11 +37,11 @@ int         main(void)
     claptrap2.beRepaired(999999999);
 
     std::cout << std::endl << "\033[1;32m- Testing the 'VaultHunter.EXE' subroutine in FR4G-TP bots -\033[0m" << std::endl;
-    claptrap1.vaulthunter_dot_exe("skag");
-    claptrap1.vaulthunter_dot_exe("bandit");
-    claptrap1.vaulthunter_dot_exe("psycho");
-    claptrap1.vaulthunter_dot_exe("rakk");
-    claptrap1.vaulthunter_dot_exe("skag");
+    claptrap1.vaulthunter_dot_exe("Skag");
+    claptrap1.vaulthunter_dot_exe("Bandit");
+    claptrap1.vaulthunter_dot_exe("Psycho");
+    claptrap1.vaulthunter_dot_exe("Rakk");
+    claptrap1.vaulthunter_dot_exe("Skag");
 
     std::cout << std::endl << "\033[1;32m- Destroying FR4G-TP and SC4V-TP bots -\033[0m" << std::endl;
     return (1);
