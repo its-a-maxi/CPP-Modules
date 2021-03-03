@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 14:52:55 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/03 14:10:14 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void			ClapTrap::takeDamage(unsigned int amount)
 void			ClapTrap::beRepaired(unsigned int amount)
 {
 	if (amount >= this->getMaxHP())
-		this->setHP(100);
+		this->setHP(this->getMaxHP());
 	else
 		this->setHP(this->getHP() + amount);
 	std::cout << this->getModel() << " " << this->getName() << " repairs " << amount

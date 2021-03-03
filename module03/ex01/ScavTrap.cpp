@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:14:11 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/02 14:53:47 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/03 14:10:38 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void			ScavTrap::takeDamage(unsigned int amount)
 void			ScavTrap::beRepaired(unsigned int amount)
 {
 	if (amount >= this->getMaxHP())
-		this->setHP(100);
+		this->setHP(this->getMaxHP());
 	else
 		this->setHP(this->getHP() + amount);
 	std::cout << "SC4V-TP " << this->getName() << " casts a healing magic. He heals "
