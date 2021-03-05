@@ -6,7 +6,7 @@
 /*   By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:19:16 by mmonroy-          #+#    #+#             */
-/*   Updated: 2021/03/03 19:35:35 by mmonroy-         ###   ########.fr       */
+/*   Updated: 2021/03/04 19:59:05 by mmonroy-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 std::string     ft_test_more(void)
 {
-    std::cout << "\033[1;33m< Testing canonical class with Sorcerer >\033[0m" << std::endl;
+    std::cout << std::endl << "\033[1;32m< Testing canonical class with Sorcerer >\033[0m" << std::endl;
     Sorcerer og("Adan", "the origin");
     Sorcerer cpy(og);
     Sorcerer cpy2("Abel", "the second copy");
@@ -26,7 +26,7 @@ std::string     ft_test_more(void)
     std::cout << "cpy2 = cpy" << std::endl;
     std::cout << "Original : " << og << "Copy 1 : " << cpy << "Copy 2 : " << cpy2;
 
-    return("\033[1;33m< Testing subject main >\033[0m");
+    return("\033[1;32m< Testing subject main >\033[0m");
 }
 
 int             main(void)
