@@ -4,6 +4,9 @@
 #include "RadScorpion.hpp"
 #include "Character.hpp"
 
+#include "Shishkebab.hpp"
+#include "Raider.hpp"
+
 int     ft_subject_main()
 {    
     Character* me = new Character("me");
@@ -22,6 +25,31 @@ int     ft_subject_main()
     me->attack(b);
     std::cout << *me;
     me->equip(pr);
+    std::cout << *me;
+    me->attack(b);
+    std::cout << *me;   
+    me->attack(b);
+    std::cout << *me;
+
+    return 0;
+}
+
+int     ft_extra_classes()
+{    
+    Character* me = new Character("Robert");
+
+    std::cout << *me;
+
+    Enemy* b = new Raider();
+
+    AWeapon* pf = new Shishkebab();
+
+    me->equip(pf);
+    std::cout << *me;
+
+    me->attack(b);
+    std::cout << *me;
+    me->attack(b);
     std::cout << *me;
     me->attack(b);
     std::cout << *me;   
@@ -77,6 +105,9 @@ int     main( void )
 
     std::cout << std::endl << "\033[1;32m< TESTING EXTRA BEHAVIORS >\033[0m" << std::endl << std::endl;
     ft_test_weapons_and_enemies();
+
+    std::cout << std::endl << "\033[1;32m< TESTING EXTRA DERIVED CLASSES >\033[0m" << std::endl << std::endl;
+    ft_extra_classes();
 
 
     std::cout << std::endl << "\033[1;32m< TESTING CHARACTER >\033[0m" << std::endl << std::endl;

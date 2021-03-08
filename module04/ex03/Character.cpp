@@ -21,6 +21,12 @@ Character::Character( std::string const & name ) : _name(name)
 
 Character::Character( const Character & src )
 {
+	int		i;
+
+	this->_inventory = new AMateria *[4];
+	i = -1;
+	while (++i < 4)
+		this->_inventory[i] = 0;
 	*this = src;
 	return;
 }
@@ -52,13 +58,18 @@ Character &				Character::operator=( Character const & rhs )
 		int i = -1;
 
 		while ( ++i < 4 )
-			delete this->_inventory[i];
+				delete this->_inventory[i];
 		delete[] this->_inventory;
 
 		this->_inventory = new AMateria*[4];
 		i = -1;
 		while ( ++i < 4 )
-			this->_inventory[i] = rhs._inventory[i]->clone();
+		{
+			if ( rhs._inventory[i] )
+				this->_inventory[i] = rhs._inventory[i]->clone();
+			else
+				this->_inventory[i] = 0;
+		}
 	}
 	return ( *this );
 }
@@ -72,13 +83,13 @@ void					Character::equip( AMateria *m )
 {
 	int i = -1;
 
-	while ( ++i < 4 && m )
+	while ( ++i < 4 && m && this->_inventory[i] != m )
 	{
-		if ( !this->_inventory[i] && this->_inventory[i] != m )
+		if ( !this->_inventory[i] )
 		{
 			delete this->_inventory[i];
 			this->_inventory[i] = m;
-			break;
+			return;
 		}
 	}
 	return;

@@ -6,11 +6,11 @@
 #    By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 11:43:49 by mmonroy-          #+#    #+#              #
-#    Updated: 2021/03/05 19:09:18 by mmonroy-         ###   ########.fr        #
+#    Updated: 2021/03/05 19:53:18 by mmonroy-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp main1.cpp
+SRCS = AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

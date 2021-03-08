@@ -6,11 +6,11 @@
 #    By: mmonroy- <mmonroy-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 11:43:49 by mmonroy-          #+#    #+#              #
-#    Updated: 2021/03/04 12:44:47 by mmonroy-         ###   ########.fr        #
+#    Updated: 2021/03/08 13:10:47 by mmonroy-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = AWeapon.cpp PlasmaRifle.cpp PowerFist.cpp Enemy.cpp SuperMutant.cpp RadScorpion.cpp Character.cpp main.cpp
+SRCS = AWeapon.cpp PlasmaRifle.cpp PowerFist.cpp Enemy.cpp SuperMutant.cpp RadScorpion.cpp Character.cpp Shishkebab.cpp Raider.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

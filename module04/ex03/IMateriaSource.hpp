@@ -1,5 +1,5 @@
-#ifndef IIMATERIASOURCE_HPP
-# define IIMATERIASOURCE_HPP
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
 # include "AMateria.hpp"
 
@@ -14,4 +14,4 @@ class IMateriaSource
 
 };
 
-#endif /* *************************************************** IIMATERIASOURCE_H */
+#endif /* *************************************************** IMATERIASOURCE_H */
