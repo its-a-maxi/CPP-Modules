@@ -68,7 +68,7 @@ Everything should be coded on C++98 and respect Subjects rules.
 
 * Run the executable
 ```sh
-  ./_<executable>_
+  ./<executable>
 ```
 
 
