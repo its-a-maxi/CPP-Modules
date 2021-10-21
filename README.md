@@ -22,10 +22,9 @@ Everything should be coded on C++98 and respect Subjects rules.
 
 ### Subject
 
-* [Subject](subject.pdf)
-
 <details>
   <summary>Subjects</summary>
+  
   * [CPP 00](https://cdn.intra.42.fr/pdf/pdf/26479/en.subject.pdf)
   * [CPP 01](https://cdn.intra.42.fr/pdf/pdf/26481/en.subject.pdf)
   * [CPP 02](https://cdn.intra.42.fr/pdf/pdf/26482/en.subject.pdf)
