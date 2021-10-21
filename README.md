@@ -50,7 +50,7 @@ Everything should be coded on C++98 and respect Subjects rules.
 
 * Clone the repo
   ```sh
-  git clone https://github.com/its-a-maxi/ft_containers.git
+  git clone https://github.com/its-a-maxi/Philosophers.git
   ```
   
 <p align="right">(<a href="#top">back to top</a>)</p>
