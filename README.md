@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <h1>CPP Modules</h1>
-  <img src="https://cdn.journaldev.com/wp-content/uploads/2020/02/Standard-Template-Library-in-C.png" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/306px-ISO_C%2B%2B_Logo.svg.png" />
 </div>
 
 <!-- ABOUT THE PROJECT -->
